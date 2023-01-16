@@ -19,28 +19,88 @@ class CoinSellView extends StatelessWidget {
           child: SizedBox(
             height: Get.height * 0.8,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: width * 0.05, vertical: width * 0.05),
+              padding: EdgeInsets.symmetric(
+                  horizontal: width * 0.05, vertical: width * 0.05),
               child: Column(
                 children: [
                   Column(children: [
                     customTextField(
+                        onChanged: (value) {
+                          if (double.parse(controller.coinsController.text) <=
+                              1000000) {
+                            controller.coin =
+                                double.parse(controller.coinsController.text);
+                          } else {
+                            controller.coin = 1000000;
+                            controller.coinsController.text = '1000000';
+                          }
+                          controller.update();
+                        },
+                        onDragCompleted:
+                            (handlerIndex, lowerValue, upperValue) {
+                          controller.coin = lowerValue;
+                          controller.coinsController.text =
+                              lowerValue.toString();
+                        },
+                        min: 1,
+                        max: 1000000,
                         frontText: "Coins",
                         hintText: "Coins Quantity",
                         textInputType: TextInputType.number,
-                        controller: controller.coins),
+                        controller: controller.coinsController),
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: width * 0.05),
                       child: customTextField(
+                          min: 1,
+                          max: 1000000,
+                          onChanged: (value) {
+                            if (double.parse(
+                                    controller.buyPriceController.text) <=
+                                1000000) {
+                              controller.buyPrice = double.parse(
+                                  controller.buyPriceController.text);
+                            } else {
+                              controller.buyPrice = 1000000;
+                              controller.buyPriceController.text = '1000000';
+                            }
+                            controller.update();
+                          },
+                          onDragCompleted:
+                              (handlerIndex, lowerValue, upperValue) {
+                            controller.buyPrice = lowerValue;
+                            controller.buyPriceController.text =
+                                lowerValue.toString();
+                          },
                           frontText: "Buy Price",
                           hintText: "Coin Buying Price",
                           textInputType: TextInputType.number,
-                          controller: controller.buyPrice),
+                          controller: controller.buyPriceController),
                     ),
                     customTextField(
+                        min: 1,
+                        max: 1000000,
+                        onChanged: (value) {
+                          if (double.parse(
+                                  controller.sellPriceController.text) <=
+                              1000000) {
+                            controller.sellPrices = double.parse(
+                                controller.sellPriceController.text);
+                          } else {
+                            controller.sellPrices = 1000000;
+                            controller.sellPriceController.text = '1000000';
+                          }
+                          controller.update();
+                        },
+                        onDragCompleted:
+                            (handlerIndex, lowerValue, upperValue) {
+                          controller.sellPrices = lowerValue;
+                          controller.sellPriceController.text =
+                              lowerValue.toString();
+                        },
                         frontText: "Sell Price",
                         hintText: "Coin Sell Price",
                         textInputType: TextInputType.number,
-                        controller: controller.sellPrice),
+                        controller: controller.sellPriceController),
                   ]),
                   Spacer(),
                   customButton(text: "CALCULATE", onTap: controller.onCalculate)
