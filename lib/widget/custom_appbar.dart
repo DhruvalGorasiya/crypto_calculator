@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 PreferredSizeWidget customAppBar({required String text}) {
   return AppBar(
-    backgroundColor: ColorConstant.secondaryColor,
+    backgroundColor: ColorConstant.primaryColor,
     title: Text(text, style: TextStyleConstant.style20),
     centerTitle: true,
   );

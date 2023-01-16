@@ -9,10 +9,10 @@ Widget customButton({required String text,VoidCallback? onTap}){
     child: Container(
       padding: EdgeInsets.symmetric(horizontal: Get.width * 0.05),
       margin: EdgeInsets.symmetric(vertical: Get.width * 0.05),
-      width: Get.width * 0.42,
+      width: Get.width * 0.8,
       height: Get.width * 0.13,
       decoration: BoxDecoration(
-          color: ColorConstant.secondaryColor, borderRadius: BorderRadius.circular(50)),
+          color: ColorConstant.primaryColor, borderRadius: BorderRadius.circular(16)),
       child: Center(child: Text(text,style: TextStyleConstant.style20)),
     ),
   );

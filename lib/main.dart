@@ -16,25 +16,25 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {FocusScopeNode currentFocus = FocusScope.of(context);
-      if (currentFocus.hasFocus) {
-        FocusManager.instance.primaryFocus!.unfocus();
-      }
-      },
-      child: GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          splashColor: ColorConstant.lightBlue,
-      ),
-      getPages: [
-        GetPage(name: Routes.bottomNavigation, page: () => BottomNavigationView()),
-        GetPage(name: Routes.profitView, page: () => ProfitView()),
-        GetPage(name: Routes.percentageView, page: () => PercentageView())
-      ],
-      initialRoute: Routes.bottomNavigation,
-    ));
+        onTap: () {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+          if (currentFocus.hasFocus) {
+            FocusManager.instance.primaryFocus!.unfocus();
+          }
+        },
+        child: GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(),
+          getPages: [
+            GetPage(name: Routes.bottomNavigation, page: () => BottomNavigationView()),
+            GetPage(name: Routes.profitView, page: () => ProfitView()),
+            GetPage(name: Routes.percentageView, page: () => PercentageView())
+          ],
+          initialRoute: Routes.bottomNavigation,
+        ));
   }
 }

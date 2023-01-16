@@ -10,7 +10,7 @@ class BottomNavigationController extends GetxController {
     this.index = index;
     update();
   }
-
+List<String> titleList = ["Profit Calculator","Percentage Calculator","Coin Sell Calculator"];
   List<Widget> screens = [
     ProfitView(),
     PercentageView(),
