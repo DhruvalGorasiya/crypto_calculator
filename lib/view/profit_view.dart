@@ -86,7 +86,7 @@ class ProfitView extends StatelessWidget {
                         },
                         sliderValue: controller.sellPrice),
                   ]),
-                  Spacer(),
+                  const Spacer(),
                   customButton(text: "CALCULATE", onTap: controller.onCalculate)
                 ],
               ),

@@ -73,7 +73,7 @@ Widget customTextField(
                 child: Container(
               height: 25,
               width: 25,
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration:
                   const BoxDecoration(shape: BoxShape.circle, color: ColorConstant.secondaryColor),
               child: Container(
@@ -86,7 +86,7 @@ Widget customTextField(
             max: max!,
             selectByTap: false,
             onDragging: onDragCompleted,
-            step: FlutterSliderStep(step: 1),
+            step: const FlutterSliderStep(step: 1),
             values: [sliderValue!],
             tooltip: FlutterSliderTooltip(disabled: true),
           )

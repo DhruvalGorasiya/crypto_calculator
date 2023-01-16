@@ -42,7 +42,7 @@ class CoinSellView extends StatelessWidget {
                         textInputType: TextInputType.number,
                         controller: controller.sellPrice),
                   ]),
-                  Spacer(),
+                  const Spacer(),
                   customButton(text: "CALCULATE", onTap: controller.onCalculate)
                 ],
               ),

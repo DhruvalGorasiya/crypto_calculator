@@ -6,6 +6,10 @@ class TextStyleConstant {
     fontSize: 20,
     color: ColorConstant.white,
     fontWeight: FontWeight.normal,
+  );static const style32 = TextStyle(
+    fontSize: 32,
+    color: ColorConstant.white,
+    fontWeight: FontWeight.w700,
   );
   static const style18 = TextStyle(
     fontSize: 18,

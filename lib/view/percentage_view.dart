@@ -1,7 +1,5 @@
-import 'package:crypto_calculator/constants/color_constant.dart';
 import 'package:crypto_calculator/controller/percentage_controller.dart';
 import 'package:crypto_calculator/widget/custom_button.dart';
-import 'package:crypto_calculator/widget/custom_result_container.dart';
 import 'package:crypto_calculator/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -43,7 +41,7 @@ class PercentageView extends StatelessWidget {
                       textInputType: TextInputType.number,
                       controller: controller.profitPer),
                 ]),
-                Spacer(),
+                const Spacer(),
                 customButton(text: "CALCULATE", onTap: controller.onCalculate)
               ],
             ),

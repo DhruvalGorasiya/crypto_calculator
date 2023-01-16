@@ -5,4 +5,5 @@ class ImageConstant {
   static const percentage = "assets/icons/percent.png";
   static const profit = "assets/icons/stock-exchange-app.png";
   static const profitSelected = "assets/icons/stock-exchange-app_selected.png";
+  static const backIcon = "assets/icons/back_arrow.svg";
 }

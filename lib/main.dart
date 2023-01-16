@@ -1,6 +1,7 @@
 import 'package:crypto_calculator/Router/routes.dart';
-import 'package:crypto_calculator/constants/color_constant.dart';
+import 'package:crypto_calculator/controller/calculate_controller.dart';
 import 'package:crypto_calculator/view/bottom_navigation_view.dart';
+import 'package:crypto_calculator/view/calculate_screen.dart';
 import 'package:crypto_calculator/view/percentage_view.dart';
 import 'package:crypto_calculator/view/profit_view.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
           getPages: [
             GetPage(name: Routes.bottomNavigation, page: () => BottomNavigationView()),
             GetPage(name: Routes.profitView, page: () => ProfitView()),
-            GetPage(name: Routes.percentageView, page: () => PercentageView())
+            GetPage(name: Routes.percentageView, page: () => PercentageView()),
+            GetPage(name: Routes.calculateView, page: () => CalculateScreen())
           ],
           initialRoute: Routes.bottomNavigation,
         ));
