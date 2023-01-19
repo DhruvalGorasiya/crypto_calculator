@@ -1,8 +1,10 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:crypto_calculator/Router/routes.dart';
-import 'package:crypto_calculator/controller/calculate_controller.dart';
+import 'package:crypto_calculator/controller/terms_and_conditions.dart';
 import 'package:crypto_calculator/view/bottom_navigation_view.dart';
-import 'package:crypto_calculator/view/calculate_screen.dart';
 import 'package:crypto_calculator/view/percentage_view.dart';
+import 'package:crypto_calculator/view/privacy_policy.dart';
 import 'package:crypto_calculator/view/profit_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -34,7 +36,8 @@ class MyApp extends StatelessWidget {
             GetPage(name: Routes.bottomNavigation, page: () => BottomNavigationView()),
             GetPage(name: Routes.profitView, page: () => ProfitView()),
             GetPage(name: Routes.percentageView, page: () => PercentageView()),
-            GetPage(name: Routes.calculateView, page: () => CalculateScreen())
+            GetPage(name: Routes.privacyPolicyView, page: () => PrivacyPolicy()),
+            GetPage(name: Routes.termsAndCondition, page: () => TermsAndCondition()),
           ],
           initialRoute: Routes.bottomNavigation,
         ));

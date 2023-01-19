@@ -17,23 +17,22 @@ class PercentageView extends StatelessWidget {
         child: SizedBox(
           height: Get.height * 0.8,
           child: Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: width * 0.05, vertical: width * 0.05),
+            padding: EdgeInsets.symmetric(horizontal: width * 0.05, vertical: width * 0.05),
             child: Column(
               children: [
                 Column(children: [
                   customTextField(
-                      min: 1,
+                      min: 0,
                       max: 1000000,
                       frontText: "Amount",
                       hintText: "Investing Amount",
                       textInputType: TextInputType.number,
-                      sliderValue: 100,
+                      sliderValue: controller.amount,
                       onChanged: (value) {
-                        if (double.parse(controller.amountController.text) <=
-                            1000000) {
-                          controller.amount =
-                              double.parse(controller.amountController.text);
+                        if (controller.amountController.text.isEmpty) {
+                          controller.amount = 0;
+                        } else if (double.parse(controller.amountController.text) <= 1000000) {
+                          controller.amount = double.parse(controller.amountController.text);
                         } else {
                           controller.amount = 1000000;
                           controller.amountController.text = '1000000';
@@ -42,32 +41,29 @@ class PercentageView extends StatelessWidget {
                       },
                       onDragCompleted: (handlerIndex, lowerValue, upperValue) {
                         controller.amount = lowerValue;
-                        controller.amountController.text =
-                            lowerValue.toString();
+                        controller.amountController.text = lowerValue.toString();
                       },
                       controller: controller.amountController),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: width * 0.05),
                     child: customTextField(
-                        min: 1,
+                        min: 0,
                         max: 1000000,
+                        sliderValue: controller.buyPrice,
                         onChanged: (value) {
-                          if (double.parse(
-                                  controller.buyPriceController.text) <=
-                              1000000) {
-                            controller.buyPrice = double.parse(
-                                controller.buyPriceController.text);
+                          if (controller.buyPriceController.text.isEmpty) {
+                            controller.buyPrice = 0;
+                          } else if (double.parse(controller.buyPriceController.text) <= 1000000) {
+                            controller.buyPrice = double.parse(controller.buyPriceController.text);
                           } else {
                             controller.buyPrice = 1000000;
                             controller.buyPriceController.text = '1000000';
                           }
                           controller.update();
                         },
-                        onDragCompleted:
-                            (handlerIndex, lowerValue, upperValue) {
+                        onDragCompleted: (handlerIndex, lowerValue, upperValue) {
                           controller.buyPrice = lowerValue;
-                          controller.buyPriceController.text =
-                              lowerValue.toString();
+                          controller.buyPriceController.text = lowerValue.toString();
                         },
                         frontText: "Buy Price",
                         hintText: "Coin Buying Price",
@@ -75,23 +71,23 @@ class PercentageView extends StatelessWidget {
                         controller: controller.buyPriceController),
                   ),
                   customTextField(
-                      min: 1,
+                      min: 0,
                       max: 1000000,
+                      sliderValue: controller.profitPer,
                       onChanged: (value) {
-                        if (double.parse(controller.profitPerController.text) <=
-                            1000000) {
-                          controller.sellPrices =
-                              double.parse(controller.profitPerController.text);
+                        if (controller.profitPerController.text.isEmpty) {
+                          controller.profitPer = 0;
+                        } else if (double.parse(controller.profitPerController.text) <= 1000000) {
+                          controller.profitPer = double.parse(controller.profitPerController.text);
                         } else {
-                          controller.sellPrices = 1000000;
+                          controller.profitPer = 1000000;
                           controller.profitPerController.text = '1000000';
                         }
                         controller.update();
                       },
                       onDragCompleted: (handlerIndex, lowerValue, upperValue) {
-                        controller.sellPrices = lowerValue;
-                        controller.profitPerController.text =
-                            lowerValue.toString();
+                        controller.profitPer = lowerValue;
+                        controller.profitPerController.text = lowerValue.toString();
                       },
                       frontText: "Profit %",
                       hintText: "Profit want in %",

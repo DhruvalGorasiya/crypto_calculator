@@ -41,6 +41,8 @@ dependencies:
   another_xlider: ^1.1.2
   syncfusion_flutter_charts: ^20.4.43
   flutter_svg: ^1.1.6
+  flutter_webview_pro: ^3.0.1+4
+  store_redirect: ^2.0.1
 
 dev_dependencies:
   flutter_test:

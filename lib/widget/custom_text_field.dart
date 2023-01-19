@@ -38,7 +38,9 @@ Widget customTextField(
               cursorColor: ColorConstant.secondaryColor,
               style: TextStyleConstant.style18.copyWith(color: ColorConstant.primaryColor),
               cursorHeight: 22,
-              onChanged: onChanged,
+              onChanged: (value){
+                onChanged!(value);
+              },
               decoration: InputDecoration(
                   labelStyle: TextStyleConstant.style18.copyWith(color: ColorConstant.grey),
                   floatingLabelBehavior: FloatingLabelBehavior.auto,
